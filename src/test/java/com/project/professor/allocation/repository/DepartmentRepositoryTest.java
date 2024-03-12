@@ -1,5 +1,8 @@
 package com.project.professor.allocation.repository;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -39,5 +42,38 @@ public class DepartmentRepositoryTest {
 		Department dpTest = departmentRepository.save(dp);
 		
 		System.out.println(dpTest);
+	}
+	
+	@Test
+	public void readTest() {
+		List<Department> dp = departmentRepository.findAll();
+		
+		System.out.println(dp);
+	}
+	
+	@Test
+	public void readOneTest() {
+		Optional<Department> dp = departmentRepository.findById(2L);
+		
+		if (!dp.isEmpty()) {
+			System.out.println(dp);
+		}
+		else {
+			System.out.println("Department not found");
+		}
+	}
+	
+	
+	@Test
+	public void deleteTest() {
+		Optional<Department> dp = departmentRepository.findById(1L);
+		
+		if (!dp.isEmpty()) {
+			departmentRepository.deleteById(dp.get().getId());
+			System.out.println("Deleted department");
+		}
+		else {
+			System.out.println("Department not found");
+		}
 	}
 }
