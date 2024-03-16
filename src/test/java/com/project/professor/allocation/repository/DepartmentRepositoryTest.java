@@ -45,17 +45,17 @@ public class DepartmentRepositoryTest {
 	}
 	
 	@Test
-	public void readTest() {
+	public void readAllTest() {
 		List<Department> dp = departmentRepository.findAll();
 		
 		System.out.println(dp);
 	}
 	
 	@Test
-	public void readOneTest() {
-		Optional<Department> dp = departmentRepository.findById(2L);
+	public void readTest() {
+		Department dp = departmentRepository.findById(2L).orElse(null);
 		
-		if (!dp.isEmpty()) {
+		if (dp != null) {
 			System.out.println(dp);
 		}
 		else {
@@ -66,10 +66,10 @@ public class DepartmentRepositoryTest {
 	
 	@Test
 	public void deleteTest() {
-		Optional<Department> dp = departmentRepository.findById(1L);
+		Department dp = departmentRepository.findById(10L).orElse(null);
 		
-		if (!dp.isEmpty()) {
-			departmentRepository.deleteById(dp.get().getId());
+		if (dp != null) {
+			departmentRepository.deleteById(dp.getId());
 			System.out.println("Deleted department");
 		}
 		else {
