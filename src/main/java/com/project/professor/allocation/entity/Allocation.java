@@ -78,6 +78,22 @@ public class Allocation {
 		this.endHour = end;
 	}
 
+	public Professor getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
+	}
+
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+
 	@Override
 	public String toString() {
 		return "Allocation [id=" + id + ", day=" + dayOfWeek + ", start=" + startHour + ", end=" + endHour + "]";
