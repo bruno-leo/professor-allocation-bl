@@ -70,7 +70,7 @@ public class CourseRepositoryTest {
 		
 		if (!course.isEmpty()) {
 			courseRepository.deleteById(course.get().getId());
-			System.out.println("Deleted course");
+			System.out.println("Course deleted");
 		}
 		else {
 			System.out.println("Course not found");

@@ -73,4 +73,17 @@ public class ProfessorRepositoryTest {
 			System.out.println("Professor not found");
 		}
 	}
+	
+	@Test
+	public void deleteTest() {
+		Professor prof = professorRepository.findById(10L).orElse(null);
+		
+		if (prof != null) {
+			professorRepository.delete(prof);
+			System.out.println("Professor deleted");
+		}
+		else {
+			System.out.println("Professor not found");
+		}
+	}
 }
