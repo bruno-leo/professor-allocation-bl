@@ -26,10 +26,9 @@ public class ProfessorRepositoryTest {
 	public void createTest() {
 		Professor prof = new Professor();
 		prof.setName("Tiago 1213");
-		prof.setCpf("36196617079");
+		prof.setCpf("36196617090");
 		
 		Department dp = new Department();
-		dp.setName("Depto História");
 		dp.setId(1L);
 		prof.setDepartment(dp);
 		
